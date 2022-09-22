@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.center{
+	text-align: center;
+}
+.mt-2{
+	margin-top: 2rem;
+}
+</style> 
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%@ include file="/include/header.jsp"%>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>PHONE</th>
+				<th>GENDER</th>
+				<th>ADDR</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${list}" var="dto">
+				<tr>
+					<td>${dto.id}</td>
+					<td>${dto.name}</td>
+					<td>${dto.phone}</td>
+					<td>${dto.gender}</td>
+					<td>${dto.addr}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<%@ include file="/include/footer.jsp"%>
+</body>
+</html>

@@ -1,0 +1,8 @@
+package test;
+
+public class TestDTO {
+	private int test_a;
+	private String  test_data1, test_data2, test_data3;
+	
+	
+}

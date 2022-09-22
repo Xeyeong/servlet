@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="kang.css" />
+</head>
+<body>
+	<div class="wrap">
+		<img src="kang.png" alt="강귄" />
+	</div>
+	<div class="p"><span>세영씨 옥상 긔.</span></div>
+	<div class="q"><a href="../index.html">돌아가긔.</a></div>
+</body>
+</html>

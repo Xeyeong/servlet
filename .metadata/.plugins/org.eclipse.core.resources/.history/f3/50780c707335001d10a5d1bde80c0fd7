@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test"><!-- 클래스랑 유사함 -->
+	<!-- 클래스에서 스태틱멤버 접근이랑 비슷, returnType=> ResultType SQL 맵퍼는 ; <= 세미콜론으로 쿼리의 
+		마지막 문장을 찍으면 오류가 발생한다. -->
+	<select id="selectTest" resultType="Integer">
+		SELECT 1 from dual
+	</select>
+	<!-- 똑같이 Selectone으로 DAO에서 조회를 한다 숫자가 아니라 나의 이니셜을 조회해보자 DUAL 조회쿼리와 ResultType이 
+		어떤것이면 될까? varchar2,,varchar , nvarchar 등등 => String -->
+	<select id="selectName" resultType="String">
+		SELECT 'JSY' name FROM DUAL
+	</select>
+	<select id="list" resultType="test.TestDTO">
+		SELECT * FROM TEST_TBL
+		order by TEST_A 
+	</select>
+	
+	
+	<select id="insert">
+		
+	</select>
+	
+
+</mapper>

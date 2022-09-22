@@ -1,0 +1,45 @@
+<%@page import="java.util.StringTokenizer"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.StringTokenizer"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:include page="/include/header.jsp" />
+	<h3>토큰분리</h3>
+	토큰 = 단어단위
+	split 단점 : 하나밖에 지정할수없음
+	<%
+	String subjects = "view, oracle, java, servlet/Spring";
+	String subject[] = subjects.split(",");
+	for(String s : subject){
+		out.print("<div>" + s + "</div>");
+	}
+	out.print("<hr>")
+	String s[] = subject[3].split("/");
+	
+	java.util.StringTokenizer token = new java.util.StringTokenizer(subjects,",/");
+	while(token.hasMoreTokens()){
+		out.print("<div>" + token.nextToken() + "</div>");
+		
+		
+	}
+	
+	String a = token.nextToken();
+	String b = token.nextToken();
+	String c = token.nextToken();
+	String d = token.nextToken();
+	String e = token.nextToken();
+	
+	
+	%>
+	
+	
+	<%@ include file="/include/footer.jsp"%>
+
+</body>
+</html>

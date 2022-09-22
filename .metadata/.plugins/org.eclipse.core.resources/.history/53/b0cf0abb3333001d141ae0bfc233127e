@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.center{
+	text-align: center;
+}
+.mt-2{
+	margin-top: 2rem;
+}
+</style> 
+<title>\</title>
+</head>
+<body>
+	<footer>
+		<div class="inner">
+			<div class="upper">
+				<h1>한울직업전문학교</h1>
+				<ul>
+					<li><a href="#">Policy</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Family Site</a></li>
+					<li><a href="#">Sitemap</a></li>
+				</ul>
+			</div>
+			<div class="lower">
+				<address>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+					facere.<br> TEL : 062-111-1234 C.P : 010-1234-5678
+				</address>
+				<p>2022 Hanul &copy; copyright all right reserved.</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

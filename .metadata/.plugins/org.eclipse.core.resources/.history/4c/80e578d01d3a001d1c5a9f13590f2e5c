@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="/include/header.jsp"/>
+
+	<h3>el문법</h3>
+	<h3>함수 라이브러리</h3>
+	
+	<div><a href="scope.el">영역(scope) 데이터</a></div>
+	<div><a href="form.el">파라미터 데이터</a></div>
+	<div><a href="el/operator.jsp">연산자</a></div>
+	<div><a href="el/for.jsp">반복문</a></div>
+	<div><a href="el/control.jsp">조건문</a></div>
+	<div><a href="el/token.jsp">토큰</a></div>
+	
+<jsp:include page="/include/footer.jsp"/>
+
+</body>
+</html>
