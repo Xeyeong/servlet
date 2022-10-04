@@ -12,7 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class TestDAO {
 	private static SqlSession sql ;
 	static {
-		String resource = "Mybatis/Config.xml"; // 설정 파일 경로 1-1
+		String resource = "mybatis/config.xml"; // 설정 파일 경로 1-1
 		InputStream inputStream;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
@@ -52,8 +52,8 @@ public class TestDAO {
 	}
 	
 	//테스트데이터 상세 조회
-	public TestDTO test_detail(int a){
-		return sql.selectOne("test.detail", a);		
+	public TestDTO test_detail(int cd){
+		return sql.selectOne("test.detail", cd);		
 	}
 	
 }

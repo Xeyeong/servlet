@@ -1,6 +1,4 @@
 @charset 'utf-8';
-
-
 * {
 	margin: 0px;
 	padding: 0px;
@@ -241,9 +239,7 @@ footer .inner .lower p {
     color: #ffffff;
     text-align: left;
 }
-table th{
-	background-color: #6d6b6b!important;  color : #fff;
-}
+
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
@@ -305,25 +301,3 @@ table th{
     font-weight: bold;
     color: #009879;
 }
-.list-top{
-	width: 80%;
-	margin: 2% 10%;
-}
-input[ type=button ] {
-	padding : 2px 10px
-}
-	
-input[ type=submit ]{
-	padding: 2px 10px
-}
-label:not(:last-child) {
-	margin-right: 30px
-}
-
-
-
-
-
-
-
-

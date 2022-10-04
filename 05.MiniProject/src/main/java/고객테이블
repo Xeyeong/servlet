@@ -1,0 +1,16 @@
+--customer
+--테이블 컬럼 id , name , phone , gender , addr 
+--id컬럼은 primary key이며 중복되지 않음. 
+
+CREATE TABLE CUSTOMER (
+    id varchar2(100) PRIMARY KEY ,
+    name varchar2(10),
+    phone varchar2(15),
+    gender varchar2(5) DEFAULT '남' CHECK (GENDER IN ('남','여')),
+    addr varchar(100)
+);
+INSERT INTO customer values ( 'id1' , 'name1' , '010-1234' , '남' , '주소부분');
+INSERT INTO customer values ( 'id2' , 'name2' , '010-1238' , '여' , '주소부분2');
+
+COMMIT;
+SELECT * FROM customer;

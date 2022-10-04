@@ -73,7 +73,7 @@ for(int n : no){
 		
 		<c:forEach items="${list}" var="dto">
 			<tr>
-				<td>${dto.test_a }</td>
+				<td>${dto.test_cd }</td>
 				<td>${dto.test_data1 }</td>
 				<td>${dto.test_data2 }</td>
 				<td>${dto.test_data3 }</td>
@@ -96,8 +96,8 @@ for(int n : no){
     </thead>
     <tbody>
  	<c:forEach items="${list}" var="dto">
-			<tr onclick="location='detail.te?cd=${dto.test_a }'">
-				<td>${dto.test_a }</td>
+			<tr onclick="location='detail.te?cd=${dto.test_cd }'">
+				<td>${dto.test_cd }</td>
 				<td>${dto.test_data1 }</td>
 				<td>${dto.test_data2 }</td>
 				<td>${dto.test_data3 }</td>

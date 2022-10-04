@@ -10,7 +10,7 @@
 <%@ include file="/include/header.jsp" %>
 <h3>데이터 수정</h3>
 <form method='post' action='update.te'>
-<input type='hidden' name='a' value='${dto.test_a}'>
+<input type='hidden' name='cd' value='${dto.test_cd}'>
 <table class="styled-table">
 	<tr><th>데이터1</th>
 		<td><input type='text' name='test_data1' value='${dto.test_data1}'></td>
@@ -24,7 +24,7 @@
 </table>
 <div style='margin:0 auto' class='list-top'>
 	<input type='submit' value='저장'>
-	<input type='button' value='취소' onclick="location='detail.te?a=${dto.test_a}'">
+	<input type='button' value='취소' onclick="location='detail.te?cd=${dto.test_cd}'">
 </div>
 </form>
 

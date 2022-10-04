@@ -1,0 +1,29 @@
+0. POM.xml에 라이브러리를 추가하기 ( Maven Respository ) - O
+
+1. MyBatis 사이트에 접속해서 설정을 하기 https://mybatis.org/mybatis-3/getting-started.html
+
+-1.1 : 공식 사이트에 있는 XML 구성 (설정) 을 JavaProject에 넣기.
+		※ <?xml version="1.0" encoding="UTF-8" ?><= 로 시작되는 문서 찾기 ※
+		dataSource 안쪽에 DB설정 부분 .
+		mappers 안쪽에 mapper 파일 경로.
+		
+-1.2 : 공식 사이트에 있는 맵퍼(Sql쿼리를 모아놓은 파일)를 추가하기
+		※ Sql Mapper Statement 로 표기 되어있음 ※
+		
+-1.3 : 공식 사이트에 있는 SqlSessionFactory와 SqlSession 초기화하는 코드를 가지고 와서 테스트해보기.
+		※ 여러번 사용하고 익숙해지면 필요없는 과정이지만 초기에는 select 1 from dual 을 통해
+		내가 던져준 query를 Sql api가 정확하게 전달하고 그 결과를 받아왔는지 테스트 해보는게 좋다.※
+
+2. SqlSession이용 테스트해보기.※
+
+
+
+Servlet(Java) <= 사용자가 URL이나 또는 Form태그 같은것 이용해서 요청을 하면 요청을 받는 객체.
+ex)www.naver.com => 
+Controller(Servlet) => 정보 (기사) => DB
+Jsp(View)
+
+->HTML , Javascript , css 등을 이용해서 개발->정적
+
+->Dynamic ( 동적 )
+ Servlet(요청,Controller) => Mybatis(DB,Model) => Jsp(View)

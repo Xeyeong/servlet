@@ -68,11 +68,11 @@ public class TestController extends HttpServlet {
 		}else if( uri.equals("/detail.te") ) {
 			//해당 글의 정보를 DB에서 조회해와			
 			//String -> int 변환			
-			//String a = req.getParameter("cd");
-			int cd1 = Integer.parseInt( req.getParameter("a") );		//int	
+			//String cd = req.getParameter("cd");
+			int cd1 = Integer.parseInt( req.getParameter("cd") );		//int	
 			//Integer -> int : Auto UnBoxing
 			//Integer dd = Integer.valueOf( req.getParameter("cd") );
-			int cd2 = Integer.valueOf( req.getParameter("a") );		//Integer	
+			int cd2 = Integer.valueOf( req.getParameter("cd") );		//Integer	
 			
 			TestDTO dto = dao.test_detail(cd1);
 			
@@ -85,8 +85,8 @@ public class TestController extends HttpServlet {
 		}else if( uri.equals("/modify.te") ) {
 			//해당 테스트데이터를 수정화면에 출력
 			//해당 데이터를 DB에서 조회해와 화면에서 출력할 수 있도록
-			int cd = Integer.parseInt( req.getParameter("a") );
-			TestDTO dto = dao.test_detail(cd);
+			int cd = Integer.parseInt( req.getParameter("cd") );
+			TestDTO dto = dao.test_detail( cd );
 			
 			//request 에 attribute 로 데이터를 담는다
 			req.setAttribute("dto", dto);
@@ -103,11 +103,11 @@ public class TestController extends HttpServlet {
 			dto.setTest_data1( req.getParameter("test_data1") ); 
 			dto.setTest_data2( req.getParameter("test_data2") ); 
 			dto.setTest_data3( req.getParameter("test_data3") );
-			dto.setTest_a( Integer.parseInt( req.getParameter("a") ) );
+			dto.setTest_cd( Integer.parseInt( req.getParameter("cd") ) );
 			dao.test_update(dto);
 			
 			//응답화면 연결: 상세화면
-			view = "detail.te?a=" + req.getParameter("a");
+			view = "detail.te?cd=" + req.getParameter("cd");
 			redirect = true;
 			
 		}else if( uri.equals("/delete.te") ) {

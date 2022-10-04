@@ -11,14 +11,12 @@ import javax.servlet.annotation.WebFilter;
 
 @WebFilter("/*")
 public class MiniFilter implements Filter {
-	
+
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("필터를 거쳐 인코딩함");
 		request.setCharacterEncoding("utf-8");
 		chain.doFilter(request, response);
-		
 	}
 
 }

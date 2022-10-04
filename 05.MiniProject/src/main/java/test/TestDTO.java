@@ -1,14 +1,14 @@
 package test;
 
 public class TestDTO {
-	private int test_a;
+	private int test_cd;
 	private String  test_data1, test_data2, test_data3;
 	
-	public int getTest_a() {
-		return test_a;
+	public int getTest_cd() {
+		return test_cd;
 	}
-	public void setTest_a(int test_a) {
-		this.test_a = test_a;
+	public void setTest_cd(int test_cd) {
+		this.test_cd = test_cd;
 	}
 	public String getTest_data1() {
 		return test_data1;

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,35 +12,37 @@
 <h3>반복문</h3>
 <%
 String str[] = {"가", "나", "다", "라"};
-for(String s : str){
-	out.println("<div>"+ s + "</div>");
+%>
+<c:set var='data' value='<%=str%>'/>
+
+<c:forEach items="${data}" var="d" varStatus="status">
+${status.index eq 0 ? "" : ","}${d}&nbsp;&nbsp;&nbsp;
+[${status.first ? "" : ","}${d}&nbsp;&nbsp;&nbsp;] <br>
+
+</c:forEach>
+<hr>
+
+<c:forEach items="<%=str%>" var="s">
+${s}
+</c:forEach>
+<hr>
+<%
+for(String s : str ){
+	out.println("<div>"+ s +"</div>");
 }
 %>
-<c:set var="data" value="<%=str%>" />
-<c:forEach items="${data}" var="d" varStatus="status" >
-${status.index eq 0 ? "" : ","  }${d}&nbsp;&nbsp;&nbsp;
-[${status.first ? "" : "," }${d}&nbsp;&nbsp;&nbsp;]<br />
-</c:forEach>
-<hr />
+<hr>
 
-<div>1~10출력</div>
-
-<c:forEach var="i" begin="1" end="5" step="1">
+<div>1~5 출력</div>
+<c:forEach var='i' begin='1' end='5' step='1'>
 <div>${i}</div>
 </c:forEach>
-<hr />
-
+<hr>
 <%
-for(int i = 1; i < 11; i++){
-	out.println("<div>" + i + "</div>");
+for(int i=1; i<=5; i++){
+	out.println("<div>"+i+"</div>");
 }
 %>
-<hr />
-
-<c:forEach items="<%=str %>" var="s">
-<div>${s}</div>
-</c:forEach>
-<hr />
 
 <jsp:include page="/include/footer.jsp"/>
 
