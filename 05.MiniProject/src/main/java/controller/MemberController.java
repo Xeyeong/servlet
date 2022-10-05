@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import member.MemberIDCheck;
 import member.MemberJoin;
+import member.MemberLogin;
+import member.MemberLogout;
+import member.NaverCallback;
+import member.NaverLogin;
 
 @WebServlet("*.mb")
 public class MemberController extends HttpServlet {
@@ -51,6 +55,35 @@ public class MemberController extends HttpServlet {
 			new MemberJoin().execute(request, response);
 			//응답화면 연결
 			return;
+			
+		}else if( uri.equals("/login.mb")) {
+			//로그인화면 요청
+			view = "member/login.jsp";
+			
+		}else if( uri.equals("/smartLogin.mb") ) {
+			//로그인처리 요청
+			//입력한 아이디/비번인 일치하는 회원정보를 DB에 조회
+			new MemberLogin().execute(request, response);
+			//화면연결없이 return
+			return;
+			
+		}else if( uri.equals("/logout.mb") ) {
+			//로그아웃처리 요청
+			new MemberLogout().execute(request, response);
+			view = (String)request.getAttribute("url");
+			redirect = true;
+			
+		}else if( uri.equals("/naverlogin.mb") ) {
+			//네이버로그인처리 요청
+			new NaverLogin().execute(request, response);
+			redirect = true;
+			view = (String)request.getAttribute("url");
+			
+		}else if( uri.equals("/navercallback.mb") ) {
+			new NaverCallback().execute(request, response);
+			redirect = true;
+			view = (String)request.getAttribute("url");
+			
 		}
 		
 		
@@ -58,5 +91,8 @@ public class MemberController extends HttpServlet {
 		else			request.getRequestDispatcher(view).forward(request, response);
 		
 	}
+	
+	//id: cmg3bBYHwudZL3cfrAWJ
+	//secret: CL4i_Uy02M
 
 }

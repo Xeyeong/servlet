@@ -1,6 +1,7 @@
 package member;
 
 import java.io.Reader;
+import java.util.HashMap;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -26,7 +27,10 @@ public class MemberDAO {
 	
 	//로그인시 회원정보 조회
 	public MemberDTO member_login(String id, String pw) {
-		return null;
+		HashMap<String,String> map = new HashMap<String,String>();
+		map.put("id", id);
+		map.put("pw", pw);
+		return sql.selectOne("member.login", map);
 	}
 	
 	//내정보보기 조회

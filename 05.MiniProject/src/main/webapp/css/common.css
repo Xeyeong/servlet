@@ -44,6 +44,10 @@ header ul li:not(:first-child) { margin-left: 10px }
 .font { font-size: 18px; }
 #delete { display: none; }
 
+.center { position: absolute;  left:50%; top:calc(120px + 50%);
+	transform: translate(-50%, -50%); 
+}
+
 .w-px40 { width:40px }
 .w-px60 { width:60px }
 .w-px80 { width:80px }

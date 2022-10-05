@@ -45,11 +45,15 @@
 
 			<ul class="util">
 				<!-- 로그인한 경우 -->
-<!-- 				<li>홍길동</li> -->
-<!-- 				<li><a class='btn-fill'>로그아웃</a></li> -->
+				<c:if test='${not empty loginInfo}'>
+					<li><strong>${loginInfo.name}</strong></li>
+					<li><a class='btn-fill' href='logout.mb'>로그아웃</a></li>
+				</c:if>
 				<!-- 로그인하지 않은 경우 -->
-				<li><a class='btn-fill' href="#">로그인</a></li>
-				<li><a class='btn-fill' href="member.mb">회원가입</a></li>
+				<c:if test='${empty loginInfo}'>
+					<li><a class='btn-fill' href="login.mb">로그인</a></li>
+					<li><a class='btn-fill' href="member.mb">회원가입</a></li>
+				</c:if>
 			</ul>
 
 		</div>
