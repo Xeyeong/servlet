@@ -12,7 +12,7 @@ public class MemberDAO {
 	public static SqlSession sql;
 	static {
 		try {
-			Reader reader = Resources.getResourceAsReader("mybatis/config.xml");
+			Reader reader = Resources.getResourceAsReader("Mybatis/Config.xml");
 			SqlSessionFactory factory 
 				= new SqlSessionFactoryBuilder().build(reader);
 			sql = factory.openSession(true);			
@@ -27,7 +27,7 @@ public class MemberDAO {
 	
 	//로그인시 회원정보 조회
 	public MemberDTO member_login(String id, String pw) {
-		HashMap<String,String> map = new HashMap<String,String>();
+		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pw);
 		return sql.selectOne("member.login", map);
@@ -45,7 +45,7 @@ public class MemberDAO {
 	
 	//내정보변경
 	public int member_update(MemberDTO dto) {
-		return 0;
+		return sql.update("member.update", dto);
 	}
 	
 	//회원탈퇴

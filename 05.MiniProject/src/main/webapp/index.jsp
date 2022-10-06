@@ -9,12 +9,9 @@
 	<figure>
 		<video src="img/visual.mp4" autoplay muted loop></video>
 		<div class="inner">
-			<h1>INNOVATION</h1>
+			<h1>꽃을든 남자 김강윤</h1>
 			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
-
-				Id praesentium molestias similique quaerat magni facere in a?
-				Adipisci, possimus reprehenderit!
+				응애! 나 아끼인혁!
 			</p>
 
 			<a href="#">view detail</a>

@@ -1,36 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix='c'%>    
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.login { width: 300px; height: 300px; }
-footer { top: 170px;   position: relative; }
-.login input { width: 100%; margin-top: 5px }
-#naver {
-	background: url('img/naverlogin.png') no-repeat center; background-size: cover;
+.login {
+	width: 300px;
+	height: 300px;
+}
+
+footer {
+	top: 700px;
+	position: relative;
+}
+
+.login input {
+	width: 100%;
+	margin-top: 5px;
+}
+#naver{
+	background: url('img/naverlogin.png') round;
+	background-size : cover;
+}
+#kakao{
+	background: url('img/img12.png') round;
+	background-size : cover;
 }
 </style>
 </head>
 <body>
-<jsp:include page="/include/header.jsp"/>
-<h3>로그인</h3>
-<div class='center login'>
-<ul>
-	<li><input type='text' id='id' class='chk' placeholder="아이디"></li>
-	<li><input type='password' id='pw'  class='chk'  placeholder="비밀번호"></li>
-	<li><input type='button' value='로그인' onclick='login()'></li>
-	<li><hr></li>
-	<li><input type='button' id='naver'></li>
-</ul>
-</div>
-
+	<jsp:include page="/include/header.jsp" />
+	<h3>로그인</h3>
+	<div class="center login">
+		<ul>
+			<li><input type="text" id="id" class="chk" placeholder="아이디" /></li>
+			<li><input type="password" id="pw" class="chk"
+				placeholder="비밀번호" /></li>
+			<li><input type="button" value="로그인" onclick='login()' /></li>
+			<li><input type='button' id='naver'></li>
+			<li><input type='button' id='kakao'></li>
+		</ul>
+	</div>
+	
 <script>
-$('#naver').on('click', function(){
-	location = 'naverlogin.mb';
+$('#naver, #kakao').on('click', function(){
+	location =  $(this).attr('id') + 'login.mb';
 });
 
 $('#pw').keypress(function(e){
@@ -74,6 +91,6 @@ function emptyCheck(){
 </script>
 
 
-<jsp:include page="/include/footer.jsp"/>
+	<jsp:include page="/include/footer.jsp" />
 </body>
 </html>

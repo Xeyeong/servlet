@@ -3,18 +3,30 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
-	
+
 <!-- 로그인	 -->
-<select id='login' resultType='member.MemberDTO'>
-	select * from member
+<select id="login" resultType="member.MemberDTO">
+	select *
+	from member
 	where id = #{id} and pw = #{pw}
 </select>
-	
+<!-- 회원정보변경 -->
+<update id="update">
+	update member
+	set gender = #{gender}, email = #{email, jdbcType=VARCHAR}
+				, phone = #{phone, jdbcType=VARCHAR}, post = #{post, jdbcType=VARCHAR}
+				, address = #{address ,jdbcType=VARCHAR}, birth = #{birth, jdbcType=VARCHAR}
+				, profile = #{profile, jdbcType=VARCHAR}
+	where id = #{id}
+</update>
+
 <!-- 회원가입	 -->
 <insert id='join'>
-	insert into member(id, pw, name, gender, email, phone, post, address, birth)
-	values (#{id}, #{pw}, #{name}, #{gender}, #{email}, #{phone}
-		 , #{post}, #{address}, #{birth})
+	insert into member(id, pw, name, gender, email, phone, post, address, birth, profile, social)
+	values (#{id}, #{pw, jdbcType=VARCHAR}, #{name}, #{gender}, #{email}
+		 , #{phone,  jdbcType=VARCHAR}
+		 , #{post, jdbcType=VARCHAR}, #{address, jdbcType=VARCHAR}, #{birth, jdbcType=VARCHAR}
+		 , #{profile}, #{social, jdbcType=VARCHAR})
 </insert>
 	
 <!-- 아이디 중복확인	 -->

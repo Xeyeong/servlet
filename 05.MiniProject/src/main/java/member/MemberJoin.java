@@ -33,8 +33,8 @@ public class MemberJoin implements Command {
 			//회원가입이 완료되면 이메일 보내기
 			new EmailSender().send( dto.getEmail(), dto.getName(), request );
 			content += "alert('회원가입 축하^^'); location='"
-			+ (request.getContextPath().isEmpty() ? "/" : request.getContextPath()) +"'; "
-					;
+			+ (request.getContextPath().isEmpty() ? "/" : request.getContextPath()) + "';"; 
+				
 			
 		}else {
 			content += "alert('회원가입 실패ㅠㅠ'); history.go(-1); "

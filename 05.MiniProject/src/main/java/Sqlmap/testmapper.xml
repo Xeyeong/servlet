@@ -24,8 +24,13 @@
 		ResultType이 어떤것이면 될까? 
 		varchar2,,varchar , nvarchar 등등=>String
 		
-
-  --> 
+	
+  -->
+  <select id="cus" resultType="cus.list"> SELECT * FROM customer</select> 
   <select id="selectName" resultType="String">SELECT 'KYM' name FROM DUAL</select> 
   <select id="list" resultType="test.TestDTO">SELECT * FROM TEST_TBL order by test_a</select> 
   </mapper>
+  
+  
+  
+  
